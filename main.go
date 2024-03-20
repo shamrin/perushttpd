@@ -14,6 +14,11 @@ import (
 	"tailscale.com/client/tailscale"
 )
 
+func redirectToHTTPS(w http.ResponseWriter, r *http.Request) {
+	// Redirect to the same host and path with the HTTPS scheme.
+	http.Redirect(w, r, "https://"+r.Host+r.RequestURI, http.StatusMovedPermanently)
+}
+
 func main() {
 	directory := flag.String("d", ".", "the directory of static file to host")
 	flag.Parse()
@@ -34,6 +39,14 @@ func main() {
 			GetCertificate: tailscale.GetCertificate,
 		},
 	}
+
+	// HTTP server for redirecting to HTTPS
+	go func() {
+		httpListenAddr := ":80"
+		log.Printf("Starting HTTP server for HTTPS redirect on %s\n", httpListenAddr)
+		log.Fatal(http.ListenAndServe(httpListenAddr, http.HandlerFunc(redirectToHTTPS)))
+	}()
+
 	log.Printf("Running TLS server on :443 ...")
 	log.Fatal(s.ListenAndServeTLS("", ""))
 }
