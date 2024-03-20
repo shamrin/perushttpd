@@ -9,3 +9,5 @@ perushttpd <directory>
 ```
 
 Based on advice from [Tailscale blog post](https://tailscale.com/blog/tls-certs) and [servetls.go example](https://github.com/tailscale/tailscale/blob/main/client/tailscale/example/servetls/servetls.go).
+
+> *perus* (colloquial Finnish): usual, normal, basic
