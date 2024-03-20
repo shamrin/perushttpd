@@ -5,9 +5,9 @@ package main
 
 import (
 	"crypto/tls"
-	"flag"
 	"log"
 	"net/http"
+	"os"
 
 	"tailscale.com/client/tailscale"
 )
@@ -19,10 +19,12 @@ func redirectToHTTPS(w http.ResponseWriter, r *http.Request) {
 var localClient tailscale.LocalClient
 
 func main() {
-	directory := flag.String("d", ".", "the directory of static file to host")
-	flag.Parse()
+	if len(os.Args) < 2 {
+		log.Fatalf("usage: %s <directory>\n", os.Args[0])
+	}
+	directory := os.Args[1]
 
-	fileServer := http.FileServer(http.Dir(*directory))
+	fileServer := http.FileServer(http.Dir(directory))
 	handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate") // HTTP 1.1.
 		w.Header().Set("Pragma", "no-cache")                                   // HTTP 1.0.
