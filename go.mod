@@ -1,4 +1,4 @@
-module github.com/shamrin/perusnetti
+module github.com/shamrin/perushttpd
 
 go 1.22.1
 
