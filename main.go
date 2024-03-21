@@ -1,4 +1,4 @@
-// Copyright (c) 2009 The Perushttpd Authors.
+// Copyright (c) 2024 The Perushttpd Authors.
 // SPDX-License-Identifier: Apache-2.0
 
 package main
