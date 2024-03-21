@@ -8,6 +8,6 @@ RUN go build -o perushttpd .
 FROM alpine:3.19
 COPY index.html /app/dist/index.html
 COPY --from=build-perushttpd /app/perushttpd /app/perushttpd
-CMD /app/perushttpd -d /app/dist
+CMD /app/perushttpd /app/dist
 
 # TODO: s6-overlay tailscale instructions
