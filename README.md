@@ -27,4 +27,4 @@ Number 2 is more configuration and more complexity than [50 lines of Perushttpd]
 
 ## Can I use Perushttpd on public-facing sites?
 
-It may work just fine, because the heavy lifting is done by battle-tested Go standard `net/http` package. That said, Perushttpd hasn't been tested on public-facing web sites yet. The original purpose is to to run internal software protected by Tailscale, where potential web server bugs are not an issue. Nobody you don't know can access it.
+It may work just fine, because the heavy lifting is done by battle-tested Go standard `net/http` package. That said, Perushttpd hasn't been tested on public-facing web sites yet. The original purpose is to to run internal software protected by Tailscale, where potential web server bugs are not an issue. Behind Tailscale, nobody you don't know can access your server.
