@@ -23,7 +23,7 @@ There is only one problem - newer Web APIs [do not work](https://developer.mozil
 
 Number 1 (Caddy) never worked for me after several attempts. It was also hard to debug.
 
-Number 2 is more configuration and more complexity than [50 lines of Perushttpd](https://github.com/shamrin/perushttpd/blob/master/main.go). And these 50 lines were easy to write, based on advice from [Tailscale blog post](https://tailscale.com/blog/tls-certs) and [servetls.go example](https://github.com/tailscale/tailscale/blob/main/client/tailscale/example/servetls/servetls.go).
+Number 2 is more configuration and more complexity compared to [less than 50 lines of Perushttpd](https://github.com/shamrin/perushttpd/blob/master/main.go). These lines were easy to write, based on advice from [Tailscale blog post](https://tailscale.com/blog/tls-certs) and [servetls.go example](https://github.com/tailscale/tailscale/blob/main/client/tailscale/example/servetls/servetls.go).
 
 ## Can I use Perushttpd on public-facing sites?
 
