@@ -1,3 +1,5 @@
+**Also consider [`tailscale serve`](https://tailscale.com/kb/1242/tailscale-serve). I developed `perushttpd` before I've learned about `serve` subcommand.**
+
 # Perushttpd - basic file server
 
 Perushttpd is a basic file server with built-in [Tailscale HTTPS support](https://tailscale.com/kb/1153/enabling-https).
