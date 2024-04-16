@@ -1,4 +1,4 @@
-**Also consider [`tailscale serve`](https://tailscale.com/kb/1242/tailscale-serve). I developed `perushttpd` before I've learned about `serve` subcommand.**
+**Note: Also consider [`tailscale serve`](https://tailscale.com/kb/1242/tailscale-serve). I developed `perushttpd` before I've learned about `serve` subcommand.**
 
 # Perushttpd - basic file server
 
